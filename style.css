@@ -1,0 +1,64 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #1a3a4a 0%, #0f2437 100%);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.container {
+    text-align: center;
+    position: relative;
+}
+
+/* Make the heading inline-flex so child spans (text + cursor) are on same line */
+h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    min-height: 5rem;
+    display: inline-flex;
+    align-items: baseline; /* align cursor to text baseline */
+    justify-content: center;
+    gap: 0.35rem;
+    margin: 0;
+}
+
+/* Cursor is a slim span sized in em so it lines up with the font baseline */
+.cursor {
+    display: inline-block;
+    width: 0.12em;
+    height: 1.05em; /* slightly taller than text to visually match the logo cursor look */
+    background-color: #F4C430;
+    margin-left: 0.15rem;
+    animation: blink 0.7s infinite;
+    align-self: baseline;
+}
+
+@keyframes blink {
+    0%, 49% {
+        opacity: 1;
+    }
+    50%, 100% {
+        opacity: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+        min-height: 3.5rem;
+    }
+
+    .cursor {
+        height: 2.5rem;
+    }
+}
